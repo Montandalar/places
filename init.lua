@@ -1,4 +1,5 @@
 local spawn_spawnpos = minetest.setting_get_pos("static_spawnpoint")
+local execution_pos = {x=-310,y=0,z=-40}
 
 places = {}
 
@@ -14,6 +15,10 @@ places.register_place = function (name, pos, command)
                 if not player then
                         return false, "Player not found"
                 end
+		if xban and xban.get_property(nm, "jailed") then
+		   player:setpos(execution_pos)
+		   return true, "Nice try! You can't escape!"
+		end
 		player:setpos(pos)
 		return true, "Teleporting to "..name.."..."
         end,
