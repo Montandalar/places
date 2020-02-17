@@ -31,7 +31,8 @@ if spawn_spawnpos then
 end
 places.register_place("Origin", {x=0, y=0, z=0}, "origin")
 places.register_place("South Forest", {x=285, y=9, z=-2047}, "sf")
-places.register_place("Personhood", {x=1532, y=28, z=2971}, "ph")
+places.register_place("Personhood", {x=1534, y=28, z=2972}, "ph")
+places.register_place("Trisiston", {x=-4262, y=21, z=-3123}, "tst")
 
 -- minetest.register_chatcommand("spawn", {
 --         params = "",
