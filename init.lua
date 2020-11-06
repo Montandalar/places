@@ -25,14 +25,16 @@ places.register_place = function (name, pos, command)
    })
 end
 
-				    
+
 if spawn_spawnpos then
    places.register_place("Spawn", spawn_spawnpos, "spawn")
 end
 places.register_place("Origin", {x=0, y=0, z=0}, "origin")
 places.register_place("South Forest", {x=285, y=9, z=-2047}, "sf")
 places.register_place("Personhood", {x=1534, y=28, z=2972}, "ph")
+places.register_place("Personhood West", {x=1133, y=14, z=3046}, "phw")
 places.register_place("Trisiston", {x=-4262, y=21, z=-3123}, "tst")
+places.register_place("Elders Valley", {x=-3815, y=10, z=-3150}, "ev")
 
 -- minetest.register_chatcommand("spawn", {
 --         params = "",
