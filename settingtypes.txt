@@ -1,0 +1,3 @@
+# On first join, players will spawn at Origin instead of the configured 
+# spawn point. Respawning players will always go to static_spawnpoint
+places_spawn_spawn (Spawn players at Spawn on first join instead of Origin) bool false

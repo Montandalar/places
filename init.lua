@@ -36,39 +36,10 @@ places.register_place("Personhood West", {x=1133, y=14, z=3046}, "phw")
 places.register_place("Trisiston", {x=-4262, y=21, z=-3123}, "tst")
 places.register_place("Elders Valley", {x=-3815, y=10, z=-3150}, "ev")
 
--- minetest.register_chatcommand("spawn", {
---         params = "",
---         description = "Teleport to the spawn point",
---         func = function(name, param)
---                 local player = minetest.get_player_by_name(name)
---                 if not player then
---                         return false, "Player not found"
---                 end
---                 if spawn_spawnpos then
---                         player:setpos(spawn_spawnpos)
---                         return true, "Teleporting to spawn..."
---                 else
---                         return false, "The spawn point is not set!"
---                 end
---         end,
--- })
-
--- minetest.register_chatcommand("origin", {
---         params = "",
---         privs = {teleport = true},
---         description = "Teleport to (0,0,0)",
---         func = function(name, param)
---                 local player = minetest.get_player_by_name(name)
---                 if not player then
---                         return false, "Player not found"
---                 end
---                 player:setpos({x=0, y=0, z=0})
---                 return true, "Teleporting to origin..."
---         end,
--- })
-
-
-minetest.register_on_newplayer(function(player)
-        player:setpos({x=0, y=-1, z=0})
-        end
-)
+local spawn_at_spawn = minetest.settings:get("places_spawn_spawn")
+minetest.log("[places] spawn_at_spawn = " .. tostring(spawn_at_spawn))
+if not (spawn_at_spawn == "true") then
+	minetest.register_on_newplayer(function(player)
+		player:setpos({x=0, y=-1, z=0})
+	end)
+end
